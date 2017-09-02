@@ -9,7 +9,7 @@ import tv.lycam.rxbus.annotation.Subscribe;
 
 /**
  * A simple SubscriberEvent mock that records Strings.
- * <p/>
+ *
  * For testing fun, also includes a landmine method that Bus tests are
  * required <em>not</em> to call ({@link #methodWithoutAnnotation(String)}).
  */

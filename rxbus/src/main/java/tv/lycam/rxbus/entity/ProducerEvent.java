@@ -12,8 +12,8 @@ import io.reactivex.annotations.NonNull;
 
 /**
  * Wraps a 'producer' method on a specific object.
- * <p/>
- * <p> This class only verifies the suitability of the method and event type if something fails.  Callers are expected
+ *
+ *  This class only verifies the suitability of the method and event type if something fails.  Callers are expected
  * to verify their uses of this class.
  */
 public class ProducerEvent extends Event {
@@ -64,7 +64,7 @@ public class ProducerEvent extends Event {
 
     /**
      * If invalidated, will subsequently refuse to produce events.
-     * <p/>
+     *
      * Should be called when the wrapped object is unregistered from the Bus.
      */
     public void invalidate() {

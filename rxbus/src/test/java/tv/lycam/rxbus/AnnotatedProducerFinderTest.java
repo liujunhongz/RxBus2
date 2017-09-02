@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Test that Bus finds the correct producers.
- * <p/>
+ *
  * This test must be outside the c.g.c.rxbus package to test correctly.
  */
 @SuppressWarnings("UnusedDeclaration")

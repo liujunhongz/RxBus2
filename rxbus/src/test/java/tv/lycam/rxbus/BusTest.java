@@ -79,7 +79,7 @@ public class BusTest {
     /**
      * Tests that events are distributed to any subscribers to their type or any
      * supertype, including interfaces and superclasses.
-     * <p/>
+     *
      * Also checks delivery ordering in such cases.
      */
     @Test

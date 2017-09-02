@@ -13,11 +13,11 @@ import io.reactivex.subjects.Subject;
 
 /**
  * Wraps a single-argument 'subscriber' method on a specific object.
- * <p/>
- * <p>This class only verifies the suitability of the method and event type if something fails.  Callers are expected to
+ *
+ * This class only verifies the suitability of the method and event type if something fails.  Callers are expected to
  * verify their uses of this class.
- * <p/>
- * <p>Two SubscriberEvent are equivalent when they refer to the same method on the same object (not class).   This
+ *
+ * Two SubscriberEvent are equivalent when they refer to the same method on the same object (not class).   This
  * property is used to ensure that no subscriber method is registered more than once.
  */
 public class SubscriberEvent extends Event {
@@ -94,7 +94,7 @@ public class SubscriberEvent extends Event {
 
     /**
      * If invalidated, will subsequently refuse to handle events.
-     * <p/>
+     *
      * Should be called when the wrapped object is unregistered from the Bus.
      */
     public void invalidate() {
