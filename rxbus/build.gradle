@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
+group = 'com.github.liujunhongz'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -7,7 +9,7 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        consumerProguardFiles ('proguard-rules.pro')
+        consumerProguardFiles('proguard-rules.pro')
     }
 }
 
@@ -16,11 +18,33 @@ dependencies {
     testCompile deps.assertjcore
     testCompile deps.robolectric
 
-    compile deps.rxjava2
-    compile deps.rxandroid2
+    provided deps.rxjava2
+    provided deps.rxandroid2
     compile deps.timber
     compile deps.androidannotations
 
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+// build a jar with source files
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+}
+
+// build a jar with javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}

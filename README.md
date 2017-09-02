@@ -1,5 +1,6 @@
 RxBus - An event bus by [ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)/[ReactiveX/RxAndroid](https://github.com/ReactiveX/RxAndroid)
 =============================
+
 This is an event bus designed to allowing your application to communicate efficiently.
 
 I have use it in many projects, and now i think maybe someone would like it, so i publish it.
@@ -12,9 +13,7 @@ Also RxBus provide the event tag to define the event. The method's first (and on
 
 **Thanks to:**
 
-[square/otto](https://github.com/square/otto)
-
-[greenrobot/EventBus](https://github.com/greenrobot/EventBus)
+[AndroidKnife/RxBus](https://github.com/AndroidKnife/RxBus)
 
 Usage
 --------
@@ -25,12 +24,12 @@ Just 2 Steps:
 
 Add dependency to your gradle file:
 ```groovy
-compile 'com.hwangjr.rxbus:rxbus:1.0.6'
+compile 'tv.lycam.rxbus:rxbus:2.0.1'
 ```
 Or maven:
 ``` xml
 <dependency>
-  <groupId>com.hwangjr.rxbus</groupId>
+  <groupId>tv.lycam.rxbus</groupId>
   <artifactId>rxbus</artifactId>
   <version>1.0.6</version>
   <type>aar</type>
@@ -39,7 +38,7 @@ Or maven:
 
 **TIP:** Maybe you also use the [JakeWharton/timber](https://github.com/JakeWharton/timber) to log your message, you may need to exclude the timber (from version 1.0.4, timber dependency update from [AndroidKnife/Utils/timber](https://github.com/AndroidKnife/Utils/tree/master/timber) to JakeWharton):
 ``` groovy
-compile ('com.hwangjr.rxbus:rxbus:1.0.6') {
+compile ('tv.lycam.rxbus:rxbus:1.0.6') {
     exclude group: 'com.jakewharton.timber', module: 'timber'
 }
 ```
@@ -50,7 +49,7 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
 
 Just use the provided(Any Thread Enforce):
 ``` java
-com.hwangjr.rxbus.RxBus
+tv.lycam.rxbus.RxBus
 ```
 Or make RxBus instance is a better choice:
 ``` java

@@ -27,5 +27,7 @@ dependencies {
     compile deps.appcompatV7
     compile deps.design
 
+    compile deps.rxjava2
+    compile deps.rxandroid2
     testCompile deps.junit
 }

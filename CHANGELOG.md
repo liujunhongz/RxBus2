@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 2.0.1 *(2017-09-02)*
+----------------------------
+
+1. add rxjava2 support
+2. update dependencies
+
 Version 1.0.6 *(2017-07-07)*
 ----------------------------
 
