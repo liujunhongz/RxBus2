@@ -1,7 +1,5 @@
 package tv.lycam.rxbus.entity;
 
-import tv.lycam.rxbus.thread.EventThread;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -9,6 +7,7 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.annotations.NonNull;
+import tv.lycam.rxbus.thread.EventThread;
 
 /**
  * Wraps a 'producer' method on a specific object.
