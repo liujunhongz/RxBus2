@@ -9,6 +9,9 @@ import tv.lycam.rxbus.annotation.Tag;
 import tv.lycam.rxbus.entity.DeadEvent;
 import tv.lycam.rxbus.thread.EventThread;
 
+import static tv.lycam.rxbus.app.Constants.EventType.TAG_SOMETHING;
+import static tv.lycam.rxbus.app.Constants.EventType.TAG_STORY;
+
 /**
  * Cat mam to birth so many cat to catch mouse, it's a war!
  */
@@ -60,7 +63,7 @@ class Tom implements Cat {
      */
     @Subscribe(
             thread = EventThread.SINGLE,
-            tags = {@Tag(Constants.EventType.TAG_STORY)}
+            tags = {@Tag(TAG_STORY)}
     )
     public void heardFromMouse(String mouseWar) {
         Timber.e("Just heard from mouse: " + mouseWar + " from " + Thread.currentThread());
@@ -83,7 +86,7 @@ class Tom implements Cat {
      */
     @Subscribe(
             thread = EventThread.IO,
-            tags = {@Tag(Constants.EventType.TAG_STORY)}
+            tags = {@Tag(TAG_STORY)}
     )
     public void caught(WhiteMouse mouse) {
         Timber.e("Caught White Mouse: " + mouse.toString() + " On " + Thread.currentThread());
@@ -96,7 +99,7 @@ class Tom implements Cat {
      */
     @Subscribe(
             thread = EventThread.IO,
-            tags = {@Tag(Constants.EventType.TAG_STORY)}
+            tags = {@Tag(TAG_STORY)}
     )
     public void caught(BlackMouse mouse) {
         Timber.e("Caught Black Mouse: " + mouse.toString() + " On " + Thread.currentThread());
@@ -110,10 +113,18 @@ class Tom implements Cat {
      */
     @Subscribe(
             thread = EventThread.SINGLE,
-            tags = {@Tag, @Tag(Constants.EventType.TAG_STORY)}
+            tags = {@Tag, @Tag(TAG_STORY)}
     )
     public void caught(DeadEvent event) {
         Timber.e("Caught RxBus DeadEvent, event is " + event.event +
                 " and source is " + event.source + " on " + Thread.currentThread());
+    }
+
+    @Subscribe(
+            thread = EventThread.MAIN_THREAD,
+            tags = {@Tag(TAG_SOMETHING)}
+    )
+    public void hear(String something) {
+        Timber.e("copy that!" + something);
     }
 }
