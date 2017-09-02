@@ -41,7 +41,7 @@ compile 'tv.lycam.rxbus:rxbus:2.0.1'
 
 **TIP:** Maybe you also use the [JakeWharton/timber](https://github.com/JakeWharton/timber) to log your message, you may need to exclude the timber (from version 1.0.4, timber dependency update from [AndroidKnife/Utils/timber](https://github.com/AndroidKnife/Utils/tree/master/timber) to JakeWharton):
 ``` groovy
-compile ('tv.lycam.rxbus:rxbus:1.0.6') {
+compile ('tv.lycam.rxbus:rxbus:2.0.1') {
     exclude group: 'com.jakewharton.timber', module: 'timber'
 }
 ```
