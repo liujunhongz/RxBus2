@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/liujunhongz/RxBus2.svg)](https://jitpack.io/#liujunhongz/RxBus2)
+[![](https://jitpack.io/v/liujunhongz/rxbus2.svg)](https://jitpack.io/#liujunhongz/rxbus2)
 
 RxBus - An event bus by [ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)/[ReactiveX/RxAndroid](https://github.com/ReactiveX/RxAndroid)
 =============================
