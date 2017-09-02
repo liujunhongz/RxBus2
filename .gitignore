@@ -46,3 +46,6 @@ classes
 obj
 
 .DS_Store
+rxbus/src/main/java/tv/lycam/rxbus/RxBus.java
+rxbus/src/main/java/tv/lycam/rxbus/entity/DeadEvent.java
+rxbus/src/main/java/tv/lycam/rxbus/entity/Event.java
